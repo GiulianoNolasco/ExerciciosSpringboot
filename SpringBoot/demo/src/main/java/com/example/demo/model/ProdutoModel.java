@@ -1,0 +1,14 @@
+package com.example.demo.model;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
+@Data
+@AllArgsConstructor
+public class ProdutoModel {
+    private int id;
+    private String nome;
+    private double preco;
+
+
+}
