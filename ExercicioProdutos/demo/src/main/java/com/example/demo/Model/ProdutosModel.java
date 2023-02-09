@@ -18,10 +18,10 @@ public class ProdutosModel {
     private int idproduto;
 
     @Column(name = "NOME_PRODUTO")
-    private String nomeproduto;
+    private String nomeProduto;
 
     @Column(name = "descricao_produto")
-    private String descricaoproduto;
+    private String descricaoProduto;
 
     @Column(name = "categoria")
     private String categoria;
@@ -31,8 +31,8 @@ public class ProdutosModel {
     @Column(name = "fornecedor")
     private String fornecedor;
     @Column(name = "PRECO_UNITARIO")
-    private int precounitario;
+    private int precoUnitario;
 
     @Column(name = "UNIDADES_ESTOQUE")
-    private int unidadesestoque;
+    private int unidadesEstoque;
 }

@@ -28,51 +28,35 @@ public class ProdutosController {
         return repository.save(produto);
     }
 
-
-//    Ao cadastrar:
-//    O preco deve ser superior a 0;
-//    O produto deve ter no minimo 4 caracteres e no maximo 100;
-//    A Categoria nao pode estar vazia;
-//    nao pode cadastrar produto com unidades_estoque menor que 1;
-
-//public void cadastrar(@RequestBody produtosModel produto){
-//        if (produto.getNome_Produto().lenght > 4
-
-
     @PostMapping("/adicionar")
     public ProdutosModel adicionar(@RequestBody ProdutosModel produto) {
-        if (produto.getPrecounitario() > 0
-                && produto.getNomeproduto().length() >= 4
-                && produto.getNomeproduto().length() <= 100
+        if (produto.getPrecoUnitario() > 0
+                && produto.getNomeProduto().length() >= 4
+                && produto.getNomeProduto().length() <= 100
                 && produto.getCategoria() != "") {
             return repository.save(produto);
         }
-            return null;
-
+        return null;
     }
 
     @DeleteMapping("/apagar/{id}")
     public void apagar(@PathVariable int id) {
-        repository.findById(id);
+        repository.deleteById(id);
     }
 
-    //    Somente os produtos com estoque superior a 0(Criar um get separado);
     @GetMapping("/buscarprodutosestoqueacimadezero")
     public List<ProdutosModel> filtrarporstatus() {
-        return repository.findByUNIDADES_ESTOQUE();
+        return repository.findByUnidadeEstoqueGreaterThan(0);
     }
 
-    //    Buscar por nome_produto usando o like do sql e ignorando o case usando o UPPER(Criar um get separado);
-    @GetMapping("/buscarpornomeproduto/{NOME_PRODUTO}")
-    public List<ProdutosModel> buscarpornomeproduto(@PathVariable String NOME_PRODUTO) {
-        return repository.findByNOME_PRODUTO(NOME_PRODUTO);
+    @GetMapping("/buscarpornomeproduto/{nomeProduto}")
+    public List<ProdutosModel> buscarpornomeproduto(@PathVariable String nomeProduto) {
+        return repository.findByNomeProdutoContainingIgnoreCase(nomeProduto);
     }
 
-//    Buscar por descricao usando o like do sql e ignorando o case usando o UPPER(Criar um get separado);
-
-    @GetMapping("/buscarpordescricaoproduto/{descricao_produto}")
-    public List<ProdutosModel> filtrarpordescricaoproduto(@PathVariable String descricao_produto) {
-        return repository.findBydescricao_produto(descricao_produto);
+    @GetMapping("/buscarpordescricaoproduto/{DescricaoProduto}")
+    public List<ProdutosModel> filtrarpordescricaoproduto(@PathVariable String DescricaoProduto) {
+        return repository.findByDescricaoProdutoContainingIgnoreCase(DescricaoProduto);
     }
 
     @GetMapping("/buscarporcategoria/{categoria}")
@@ -80,12 +64,10 @@ public class ProdutosController {
         return repository.findBycategoria(categoria);
     }
 
-
     @GetMapping("/buscarporfornecedor/{fornecedor}")
     public List<ProdutosModel> filtrarporfornecedor(@PathVariable String fornecedor) {
         return repository.findByfornecedor(fornecedor);
     }
-
 
     @GetMapping("/buscarporfabricante/{fabricante}")
     public List<ProdutosModel> filtrarporfabricante(@PathVariable String fabricante) {
