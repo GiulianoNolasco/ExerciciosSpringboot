@@ -3,6 +3,8 @@ package com.example.demo.Controller;
 import com.example.demo.Model.ProdutoModel;
 import com.example.demo.Repository.PessoaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,8 +27,12 @@ public class ProdutoController {
     }
 
     @PostMapping("/adicionar")
-    public ProdutoModel adicionar(@RequestBody @Validated ProdutoModel produto) {
-        return repository.save(produto);
+    public ResponseEntity<String> adicionar(@RequestBody @Validated ProdutoModel produto, BindingResult result) {
+        if (result.hasErrors()) {
+            return ResponseEntity.badRequest().body(result.getFieldError().getDefaultMessage());
+        } else {
+            return repository.save(produto);
+        }
     }
 
     @PutMapping("/atualizar")

@@ -17,7 +17,7 @@ public class PessoaModel {
     private int id;
     @Size(max = 100, message = "Tamanho máximo 100 caracteres.")
     private String nome;
-    @Email
+    @Email(message = "Email formato inválido")
     private String email;
     @Range(min = 18, message = " Idade mínima 18 anos.")
     private int idade;

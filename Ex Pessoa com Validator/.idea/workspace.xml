@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1363a78c-9f8a-4d9b-96cc-f640ccefe7a7" name="Changes" comment="" />
+    <list default="true" id="1363a78c-9f8a-4d9b-96cc-f640ccefe7a7" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../EX produto com validator/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../EX produto com validator/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/example/demo/Model/PessoaModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/com/example/demo/Model/PessoaModel.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -39,7 +43,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/giuliano.santos/Desktop/Git/JavaPulsati/ExerciciosSpringboot/Ex Pessoa com Validator"
+    "last_opened_file_path": "C:/Users/giuliano.santos/Desktop/Git/JavaPulsati/ExerciciosSpringboot/EX produto com validator"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
