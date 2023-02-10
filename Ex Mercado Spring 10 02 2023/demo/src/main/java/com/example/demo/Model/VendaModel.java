@@ -10,7 +10,10 @@ import java.sql.Date;
 @Entity
 @Table(name = "A_GIU_VENDAS")
 public class VendaModel {
+
     @Id
+    @GeneratedValue( strategy = GenerationType.IDENTITY,generator= "giu_VEN")
+    @SequenceGenerator(name="SEQ_A_GIU_VENDAS", sequenceName="SEQ_A_GIU_VENDAS")
     @Column(name = "ID_VENDA")
     private int idVenda;
 

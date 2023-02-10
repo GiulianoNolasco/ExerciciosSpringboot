@@ -10,6 +10,8 @@ import lombok.Data;
 @Table(name = "A_GIU_PRODUTOS")
 public class ProdutoModel {
     @Id
+    @GeneratedValue( strategy = GenerationType.IDENTITY,generator= "giu_pro")
+    @SequenceGenerator(name="SEQ_A_GIU_PRODUTOS", sequenceName="SEQ_A_GIU_PRODUTOS")
     @Column(name = "ID_PRODUTO")
     private int idCliente;
     @Size(min = 2, max = 100, message = "Tamanho fora do padrao.")

@@ -1,9 +1,6 @@
 package com.example.demo.Model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
@@ -13,6 +10,8 @@ import lombok.Data;
 @Table(name = "A_GIU_CLIENTES")
 public class ClienteModel {
     @Id
+    @GeneratedValue( strategy = GenerationType.IDENTITY,generator= "giu_cli")
+    @SequenceGenerator(name="SEQ_A_GIU_CLIENTES", sequenceName="SEQ_A_GIU_CLIENTES")
     @Column(name = "id_cliente")
     private int idCliente;
     @Size(min = 2, max = 100, message = "Tamanho fora do padrao.")
